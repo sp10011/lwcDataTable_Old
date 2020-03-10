@@ -1,0 +1,140 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "baseUrl": ".",
+        "paths": {
+            "c/accountMap": [
+                "accountMap/accountMap.js"
+            ],
+            "c/bikeCard": [
+                "bikeCard/bikeCard.js"
+            ],
+            "c/bikeCustomizerButtonBar": [
+                "bikeCustomizerButtonBar/bikeCustomizerButtonBar.js"
+            ],
+            "c/createCase": [
+                "createCase/createCase.js"
+            ],
+            "c/customDataTable": [
+                "customDataTable/customDataTable.js"
+            ],
+            "c/customDatatableDemo": [
+                "customDatatableDemo/customDatatableDemo.js"
+            ],
+            "c/customer360_Alert": [
+                "customer360_Alert/customer360_Alert.js"
+            ],
+            "c/data": [
+                "data/data.js"
+            ],
+            "c/datatablePicklist": [
+                "datatablePicklist/datatablePicklist.js"
+            ],
+            "c/detail": [
+                "detail/detail.js"
+            ],
+            "c/helloWorld": [
+                "helloWorld/helloWorld.js"
+            ],
+            "c/hero": [
+                "hero/hero.js"
+            ],
+            "c/heroDetails": [
+                "heroDetails/heroDetails.js"
+            ],
+            "c/inlineMessage": [
+                "inlineMessage/inlineMessage.js"
+            ],
+            "c/lWC_ResumeBuilder": [
+                "lWC_ResumeBuilder/lWC_ResumeBuilder.js"
+            ],
+            "c/ldsUtils": [
+                "ldsUtils/ldsUtils.js"
+            ],
+            "c/list": [
+                "list/list.js"
+            ],
+            "c/lwcDataTable": [
+                "lwcDataTable/lwcDataTable.js"
+            ],
+            "c/lwcLightningDataService": [
+                "lwcLightningDataService/lwcLightningDataService.js"
+            ],
+            "c/lwc_DataTable": [
+                "lwc_DataTable/lwc_DataTable.js"
+            ],
+            "c/lwc_LightningDataService": [
+                "lwc_LightningDataService/lwc_LightningDataService.js"
+            ],
+            "c/lwc_recordForm": [
+                "lwc_recordForm/lwc_recordForm.js"
+            ],
+            "c/lwc_showChildRecords": [
+                "lwc_showChildRecords/lwc_showChildRecords.js"
+            ],
+            "c/myLWC": [
+                "myLWC/myLWC.js"
+            ],
+            "c/myLWC01": [
+                "myLWC01/myLWC01.js"
+            ],
+            "c/orderBuilder": [
+                "orderBuilder/orderBuilder.js"
+            ],
+            "c/orderItemTile": [
+                "orderItemTile/orderItemTile.js"
+            ],
+            "c/paginator": [
+                "paginator/paginator.js"
+            ],
+            "c/placeholder": [
+                "placeholder/placeholder.js"
+            ],
+            "c/productCard": [
+                "productCard/productCard.js"
+            ],
+            "c/productFilter": [
+                "productFilter/productFilter.js"
+            ],
+            "c/productListItem": [
+                "productListItem/productListItem.js"
+            ],
+            "c/productTile": [
+                "productTile/productTile.js"
+            ],
+            "c/productTileList": [
+                "productTileList/productTileList.js"
+            ],
+            "c/pubsub": [
+                "pubsub/pubsub.js"
+            ],
+            "c/searchAccountRecord": [
+                "searchAccountRecord/searchAccountRecord.js"
+            ],
+            "c/selector": [
+                "selector/selector.js"
+            ],
+            "c/similarProducts": [
+                "similarProducts/similarProducts.js"
+            ],
+            "c/tile": [
+                "tile/tile.js"
+            ],
+            "c/Leaflet": [
+                "../staticresources/Leaflet/Leaflet.js"
+            ],
+            "c/myComponent": [
+                "myComponent/myComponent.js"
+            ]
+        }
+    },
+    "include": [
+        "**/*",
+        "../../../../.sfdx/typings/lwc/**/*.d.ts"
+    ],
+    "typeAcquisition": {
+        "include": [
+            "jest"
+        ]
+    }
+}

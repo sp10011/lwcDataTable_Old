@@ -1,0 +1,33 @@
+<template>
+    <lightning-card icon-name="custom:custom57" title="Alert">
+        <template if:true={alertData}>
+            
+            <div class="slds-var-m-around_x-small">
+                <dl class="slds-list_horizontal slds-wrap">
+                    <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Credit Memo">
+                        Credit Memo:
+                    </dt>
+                    <dd class="slds-item_detail slds-truncate" title="">0</dd>
+                </dl>
+
+                <br />
+
+                <dl class="slds-list_horizontal slds-wrap">
+                    <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Overdue">
+                        Overdue:
+                    </dt>
+                    <dd class="slds-item_detail slds-truncate" title="">0</dd>
+                </dl>
+
+                <br />
+
+                <dl class="slds-list_horizontal slds-wrap">
+                    <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Total Payments and Credit">
+                        Total Payments and Credit:
+                    </dt>
+                    <dd class="slds-item_detail slds-truncate" title="">1</dd>
+                </dl>
+            </div>
+        </template>
+    </lightning-card>
+</template>

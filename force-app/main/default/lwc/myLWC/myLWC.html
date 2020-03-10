@@ -1,0 +1,11 @@
+<template>
+    <div style="height: 300px;">
+        {myText}<br />
+        <template if:true={myRecord}>
+            test
+            {myRecord.Name.fields.value}
+            {myRecord.Email__c.fields.value}
+            {myRecord.Industry.fields.value}
+        </template>
+    </div>
+</template>

@@ -1,0 +1,41 @@
+customWidth {
+    width :50% !important;
+    
+}
+ 
+myLegend {
+    display: block;
+    padding-left: 2px;
+    padding-right: 2px;
+    border: none;
+}
+
+p {
+    font-size: 14px;
+    color: #CCCCCC;
+    margin: 4px 0;
+}
+
+img {
+    min-height: 100px;
+    max-height: 200px;
+    max-width: 300px;
+	width: auto;
+    height: 50vh;
+    border-radius: 4px;
+}
+
+customAlignment{
+    text-align: center !important;
+}
+
+customBackground{
+    background: rgb(21, 137, 238);
+    height: 7vh;
+}
+
+.wrapper iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }

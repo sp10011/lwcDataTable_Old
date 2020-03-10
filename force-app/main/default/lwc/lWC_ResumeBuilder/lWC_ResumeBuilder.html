@@ -1,0 +1,166 @@
+<!--
+  @File Name          : lWC_ResumeBuilder.html
+  @Description        : 
+  @Author             : Sumit Pandey
+  @Group              : 
+  @Last Modified By   : Sumit Pandey
+  @Last Modified On   : 1/10/2019, 11:20:19 AM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    1/10/2019   Sumit Pandey     Initial Version
+-->
+<template>
+    <div class="slds-var-m-around_medium">
+        <!-- Page Header -->
+        <div class="slds-page-header">
+            <div class="slds-page-header__row">
+                <div class="slds-page-header__col-title">
+                    <div class="slds-align_absolute-center slds-media">
+
+                        <!--div>
+                            <lightning-button name="Back" label="Back" variant="brand"></lightning-button>
+                        </div-->
+
+                        <div class="slds-align_absolute-center slds-media__body">
+                            <div class="slds-align_absolute-center slds-page-header__name">
+                                <div class="slds-align_absolute-center slds-page-header__name-title">
+                                    <h1>
+                                        <span class="slds-align_absolute-center slds-page-header__title">Welcome to Tech
+                                            Mahindra Resume Builder</span>
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <lightning-button name="Preview" label="Preview" variant="brand" onclick={showInPdf}>
+                            </lightning-button>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <template if:true={hideResumeTemplate}>
+        <div class="resumeBody">
+        <!-- Contact Details -->
+        <fieldset class="slds-form-element slds-box slds-theme--default">
+            <legend class="myLegend"><strong>Contact Details:</strong></legend>
+            <lightning-layout>
+
+                <lightning-layout-item flexibility="auto" padding="around-small">
+                    <lightning-input type="text" label="Full Name" onchange={handleChange} name="fullName"
+                        value={fullName} placeholder="Enter your Full Name"></lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto" padding="around-small">
+                    <lightning-input type="email" label="Email Address" onchange={handleChange} name="emailAddress"
+                        value={emailAddress} placeholder="Enter your Email Address"></lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto" padding="around-small">
+                    <lightning-input type="string" label="Mobile Number" onchange={handleChange} name="phoneNumber"
+                        value={phoneNumber} placeholder="Enter your Cell Number"></lightning-input>
+                </lightning-layout-item>
+            </lightning-layout>
+        </fieldset>
+
+        <br />
+
+        <!-- Total IT Experience and Relevent Experience -->
+        <fieldset class="slds-form-element slds-box slds-theme--default">
+            <legend class="myLegend"><strong>Total IT Experience/Relevent Experience:</strong></legend>
+            <lightning-layout>
+                <lightning-layout-item flexibility="auto" padding="around-small">
+                    <lightning-input type="number" label="Total Expereince" onchange={handleChange} name="totalExp"
+                        value={totalExp} formatter="decimal" placeholder="Enter your Total Experience">
+                    </lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto" padding="around-small">
+                    <lightning-input type="number" label="Relevent Experience" onchange={handleChange}
+                        name="releventExp" value={releventExp} formatter="decimal"
+                        placeholder="Enter your Relevent Experience"></lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto" padding="around-small">
+                    <lightning-input type="text" label="Job Role" name="jobRole" onchange={handleChange} value={jobRole}
+                        placeholder="Enter your Job Role"></lightning-input>
+                </lightning-layout-item>
+            </lightning-layout>
+        </fieldset>
+
+
+        <!-- Certification and Skills -->
+        <fieldset class="slds-form-element slds-box slds-theme--default">
+            <legend class="myLegend"><strong>Certifications and Skills:</strong></legend>
+            <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_info" role="alert">
+                <lightning-icon icon-name="utility:info" size="x-small"></lightning-icon>&nbsp;
+                <h2>
+                    <li>To add multiple certification - Type your Certification and press Enter</li>
+                </h2>&nbsp;&nbsp;&nbsp;
+                <h2>
+                    <li>To add multiple skills - Type your skills with semicolon seperated eg ';'</li>
+                </h2>
+            </div><br />
+            <lightning-layout>
+                <lightning-layout-Item flexibility="auto" size="6" small-device-size="6" medium-device-size="6"
+                    large-device-size="6" padding="around-small">
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for={name}>Certifications</label>
+                        <input class="slds-input" placeholder={placeholderText} value={certificationValue} type="text"
+                            id="fname" onkeyup={addInPills}>
+                        <div class="slds-form-element__control">
+                            <div id="testId" role="listbox" aria-orientation="horizontal">
+                                <ul class="slds-listbox slds-listbox_inline slds-p-top_xxx-small" role="group"
+                                    aria-label="Inputted Options:">
+                                    <template for:each={pills} for:item="pill">
+                                        <li key={pill.id} role="presentation" class="slds-listbox__item">
+                                            <lightning-pill name={pill.id} label={pill.label} onremove={onRemovePill}>
+                                            </lightning-pill>
+                                        </li>
+                                    </template>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </lightning-layout-Item>
+                <lightning-layout-Item flexibility="auto" size="6" small-device-size="6" medium-device-size="6"
+                    large-device-size="6" padding="around-small">
+                    <lightning-textarea label="Skill Sets" value={skills}
+                        placeholder="Please Enter your skills in Seperate Lines"></lightning-textarea>
+                </lightning-layout-Item>
+            </lightning-layout>
+        </fieldset>
+
+        <!-- Upload Photo -->
+        <fieldset class="slds-form-element slds-box slds-theme--default">
+            <legend class="myLegend"><strong>Upload Photo:</strong></legend>
+            <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_info" role="alert">
+                <lightning-icon icon-name="utility:info" size="x-small"></lightning-icon>&nbsp;
+                <h2>Please drag and drop your photo in below image area.</h2>
+            </div><br />
+            <lightning-layout>
+
+                <lightning-layout-Item class="slds-align_absolute-center" flexibility="auto" padding="around-small">
+                    <div ondragover={onDragOver} ondrop={onDrop}>
+                        <img src={pictureSrc}></img>
+                    </div>
+
+                </lightning-layout-Item>
+            </lightning-layout>
+        </fieldset>
+        </div>
+        </template>
+        
+        
+    </div>
+    <div class="wrapper">
+            <iframe src="/resource/pdfjs/web/viewer.html" width="100%" height="100%"></iframe>
+        </div>
+    <template if:true={showPdf}>
+       
+    </template>
+
+</template>

@@ -1,0 +1,7 @@
+<template>
+    <template if:true={myAccounts}>
+        <template for:each={myAccounts} for:item="acc" key={acc.Id}>
+                {acc}
+        </template>
+    </template>
+</template>
